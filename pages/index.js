@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
+  const [keywordInput, setKeywordInput] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -14,7 +14,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput }),
+        body: JSON.stringify({ keyword: keywordInput }),
       });
 
       const data = await response.json();
@@ -23,7 +23,7 @@ export default function Home() {
       }
 
       setResult(data.result);
-      setAnimalInput("");
+      setKeywordInput("");
     } catch(error) {
       // Consider implementing your own error handling logic here
       console.error(error);
@@ -35,19 +35,19 @@ export default function Home() {
     <div>
       <Head>
         <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <link rel="icon" href="/meme.png" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Become a world builder! Enter a keyword to build your own architextural manifesto.</h3>
+        <img src="/meme.png"/>
+        <h3>Become a world builder! Enter a keyword to build your own architectural manifesto.</h3>
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            name="animal"
+            name="keyword"
             placeholder="Enter a keyword"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+            value={keywordInput}
+            onChange={(e) => setKeywordInput(e.target.value)}
           />
           <input type="submit" value="Generate manifesto" />
         </form>
