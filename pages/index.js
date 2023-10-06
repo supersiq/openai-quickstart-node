@@ -45,7 +45,7 @@ export default function Home() {
           <input
             type="text"
             name="keyword"
-            placeholder="Enter a keyword"
+            placeholder="lil keyword pls"
             value={keywordInput}
             onChange={(e) => setKeywordInput(e.target.value)}
           />
