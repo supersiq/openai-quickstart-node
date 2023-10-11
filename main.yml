@@ -25,8 +25,8 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "jonathan.broms@gmail.com"
+          git config --global user.name "supersiq"
           git checkout --orphan gh-pages
           git --set-upstream-to=origin/main
           git pull
