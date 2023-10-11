@@ -35,4 +35,3 @@ jobs:
           git add .
           git commit -m "GitHub Pages deployment"
           git push -f origin gh-pages
-
